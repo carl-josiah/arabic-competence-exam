@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 19px;
+    background-color: #FFFFFF;
+    color: #1C1C1C;
+    line-height: 1.7;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid #E5E5E5;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #0D3B66;
+}
+
+nav div {
+    display: flex;
+    gap: 0.75rem;
+    background-color: #E5E5E5;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+nav a {
+    color: #1C1C1C;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #FFFFFF;
+    background-color: #0D3B66;
+}
+
+/* Hero */
+.hero {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #0D3B66 0%, #1F5A8A 100%);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #FFFFFF;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: #E5E5E5;
+    margin: 1rem 0 2rem;
+}
+
+.btn {
+    padding: 0.85rem 2rem;
+    background-color: #D4AF37;
+    color: #1C1C1C;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border: 2px solid #D4AF37;
+}
+
+.btn:hover {
+    background-color: #FFFFFF;
+    color: #0D3B66;
+    border-color: #0D3B66;
+}
+
+/* Container */
+.container {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #0D3B66;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.card {
+    background: #FFFFFF;
+    padding: 1.8rem;
+    border-radius: 0.5rem;
+    border: 2px solid #D4AF37;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 120px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #0D3B66;
+    box-shadow: 0 4px 12px rgba(13, 59, 102, 0.15);
+    background-color: #F9F9F9;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #0D3B66;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1.1rem;
+}
+
+/* Form */
+.form-box {
+    max-width: 380px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    border: 2px solid #D4AF37;
+    border-radius: 0.5rem;
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #0D3B66;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #E5E5E5;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #0D3B66;
+    color: #fff;
+    border: none;
+}
+
+button:hover {
+    background-color: #D4AF37;
+    color: #1C1C1C;
+}
+
+/* Footer */
+footer {
+    background: #0D3B66;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
