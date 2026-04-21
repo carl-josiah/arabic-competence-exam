@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Arabic Competence Exam</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
     <nav>
@@ -22,7 +24,7 @@
         <h2>About This Project</h2>
 
         <p style="max-width:800px; margin:auto; text-align:center;">
-            The Arabic Competence Exam is a web-based platform designed to evaluate Arabic language proficiency 
+            The Arabic Competence Exam is a web-based platform designed to evaluate Arabic language proficiency
             through structured assessments covering reading and comprehension.
         </p>
     </section>
@@ -36,7 +38,7 @@
                 <p>
                     Carl Castro – 202211346<br>
                     Firas Elhag – 202310264<br>
-					Omar Mohammed – 202311782<br>
+                    Omar Mohammed – 202311782<br>
                     Zohair Jamall – 202311793<br>
                     Clark Kevin Montemayor – 202320050
                 </p>
@@ -59,4 +61,6 @@
     </footer>
 
 </body>
+
 </html>
+

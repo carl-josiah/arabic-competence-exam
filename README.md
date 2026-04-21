@@ -10,9 +10,10 @@ The exam.php, results.php, and index.php are the main .php pages that the user v
 
 - Model-View-Controller (MVC)
 
-# Core Design Principle
+# Principles and Patterns
 
 - Separation of Concerns (SoC)
+- Single Source of Truth Pattern
 
 # Industry Standards
 
