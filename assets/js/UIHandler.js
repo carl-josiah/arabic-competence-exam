@@ -10,6 +10,24 @@ function render() {
   const qText = document.getElementById("question-text");
   const container = document.getElementById("choices-container");
   const nextBtn = document.getElementById("next");
+  const progress = document.getElementById("progress");
+
+  if (!question) {
+    qText.innerHTML = "No questions available.";
+    container.innerHTML = "";
+    progress.innerText = "";
+    nextBtn.innerText = "Next";
+    nextBtn.onclick = next;
+    return;
+  }
+
+  progress.innerText = `Question ${state.currentIndex + 1} of ${state.questions.length}`;
+
+  if (state.currentIndex === 0) {
+    progress.innerText += " — First question";
+  } else if (state.currentIndex === state.questions.length - 1) {
+    progress.innerText += " — Last question";
+  }
 
   qText.innerHTML = question.text;
   container.innerHTML = "";
@@ -27,6 +45,7 @@ function render() {
       state.saveAnswer(key);
       render();
     };
+
     container.appendChild(btn);
   });
 

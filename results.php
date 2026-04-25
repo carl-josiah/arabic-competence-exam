@@ -17,7 +17,10 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <nav>
         <h2>Arabic Exam</h2>
-        <div><a href="index.php">Home</a> | <a href="logout.php">Logout</a></div>
+        <div>
+            <a href="index.php">Home</a>
+            <a href="logout.php">Logout</a>
+        </div>
     </nav>
 
     <div class="result-container" style="text-align: center; margin-top: 50px;">

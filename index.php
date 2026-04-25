@@ -2,12 +2,8 @@
 require_once 'src/SessionManager.php';
 SessionManager::start();
 
-if (isset($_SESSION['user_id'])) {
-    header('Location: logged_in.php');
-    exit();
-}
-
-$startUrl = 'login.php';
+$startUrl = isset($_SESSION['user_id']) ? 'exam.php' : 'login.php';
+$username = $_SESSION['user_name'] ?? 'Student';
 ?>
 <!DOCTYPE html>
 <html lang="en">

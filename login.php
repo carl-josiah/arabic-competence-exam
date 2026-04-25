@@ -1,19 +1,35 @@
 <?php
 require_once 'src/SessionManager.php';
 SessionManager::start();
-require_once 'src/Database.php';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $db = new Database()->connect();
-    $stmt = $db->prepare('SELECT * FROM users WHERE student_id = ?');
-    $stmt->execute([$_POST['student_id']]);
-    $user = $stmt->fetch();
 
-    if ($user && password_verify($_POST['password'], $user['password'])) {
-        SessionManager::login($user['student_id'], $user['student_name']);
-        header('Location: logged_in.php');
-        exit();
+require_once 'src/Database.php';
+
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $student_id = trim($_POST['student_id'] ?? '');
+    $password = $_POST['password'] ?? '';
+
+    if ($student_id === '' || $password === '') {
+        $error = 'Please enter both Student ID and Password.';
     } else {
-        $error = 'Invalid Student ID or Password';
+        $db = new Database()->connect();
+
+        if ($db) {
+            $stmt = $db->prepare('SELECT student_id, student_name, password FROM users WHERE student_id = ?');
+            $stmt->execute([$student_id]);
+            $user = $stmt->fetch();
+
+            if ($user && password_verify($password, $user['password'])) {
+                SessionManager::login($user['student_id'], $user['student_name']);
+                header('Location: logged_in.php');
+                exit();
+            } else {
+                $error = 'Invalid Student ID or Password.';
+            }
+        } else {
+            $error = 'Database connection failed.';
+        }
     }
 }
 ?>
@@ -37,11 +53,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="form-box">
         <h2>Login</h2>
-        <?php if (isset($error)) {
-            echo "<p style='color:red; text-align:center;'>$error</p>";
-        } ?>
+
+        <?php if ($error): ?>
+        <p style="color: #dc2626; margin-bottom: 1rem; text-align: center;">
+            <?= htmlspecialchars($error) ?>
+        </p>
+        <?php endif; ?>
+
         <form method="POST">
-            <input type="text" name="student_id" placeholder="Student ID" required>
+            <input type="text" name="student_id" placeholder="Student ID" required
+                value="<?= htmlspecialchars($_POST['student_id'] ?? '') ?>">
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit" class="btn">Login</button>
         </form>

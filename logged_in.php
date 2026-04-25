@@ -25,7 +25,7 @@ $username = $_SESSION['user_name'] ?? ($_SESSION['username'] ?? ($_SESSION['name
     <nav>
         <h2>Arabic Exam</h2>
         <div>
-            <a href="index.php">Home</a>
+            <a href="logged_in.php">Home</a>
             <a href="results.php">Results</a>
             <a href="logout.php">Logout</a>
         </div>
@@ -71,8 +71,8 @@ $username = $_SESSION['user_name'] ?? ($_SESSION['username'] ?? ($_SESSION['name
                 <p>Review your latest score and performance.</p>
             </div>
             <div class="card">
-                <h3>Edit Profile</h3>
-                <p>Update your account information and preferences.</p>
+                <h3>Logout</h3>
+                <p>Log out of your account.</p>
             </div>
         </div>
     </section>
