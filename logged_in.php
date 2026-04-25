@@ -36,7 +36,9 @@ $username = $_SESSION['user_name'] ?? ($_SESSION['username'] ?? ($_SESSION['name
     <section class="hero">
         <h1>Welcome back, <?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?>!</h1>
         <p>You are now signed in and ready to continue your Arabic competence journey.</p>
-        <a href="<?php echo $startUrl; ?>" class="btn">Start Exam</a>
+        <a href="exam.php?level=Beginner" class="btn">Beginner Exam</a>
+        <a href="exam.php?level=Intermediate" class="btn">Intermediate Exam</a>
+        <a href="exam.php?level=Advanced" class="btn">Advanced Exam</a>
     </section>
 
     <sectionlogin class="container">
