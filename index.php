@@ -1,3 +1,14 @@
+<?php
+require_once 'src/SessionManager.php';
+SessionManager::start();
+
+if (isset($_SESSION['user_id'])) {
+    header('Location: logged_in.php');
+    exit();
+}
+
+$startUrl = 'login.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,18 +24,17 @@
     <nav>
         <h2>Arabic Exam</h2>
         <div>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
-            <a href="exam.php">Start Exam</a>
-            <a href="about.html">About</a>
+            <a href="index.php">Home</a>
+            <a href="login.php">Login</a>
+            <a href="register.php">Register</a>
+            <a href="about.php">About</a>
         </div>
     </nav>
 
     <section class="hero">
         <h1>Arabic Competence Exam</h1>
         <p>Test your Arabic language skills and discover your level</p>
-        <a href="exam.php" class="btn">Start Now</a>
+        <a href="<?php echo $startUrl; ?>" class="btn">Start Now</a>
     </section>
 
     <section class="container">
@@ -84,4 +94,3 @@
 </body>
 
 </html>
-

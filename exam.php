@@ -1,3 +1,12 @@
+<?php
+require_once 'src/SessionManager.php';
+SessionManager::start();
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,23 +23,19 @@
         <h2>Arabic Exam</h2>
         <div>
             <a href="index.php">Home</a>
-            <a href="about.php">About</a>
         </div>
     </nav>
 
     <section class="container">
         <div id="exam-app" class="form-box" style="max-width: 800px;">
             <h2 id="question-text">Loading Questions...</h2>
-
             <div id="choices-container">
             </div>
-
-            <div class="controls">
-                <button onclick="prev()" class="btn">Previous</button>
-                <button onclick="reset()" class="btn"
-                    style="background-color: #721c24; border-color: #721c24; color: white;">Reset</button>
-                <button onclick="next()" class="btn">Next</button>
-            </div>
+            <button id="prev" onclick="prev()" class="btn">Previous</button>
+            <button id ="reset" onclick="reset()" class="btn"
+                style="background-color: #721c24; border-color: #721c24; color: white;">Reset</button>
+            <button id="next" onclick="next()" class="btn">Next</button>
+        </div>
         </div>
     </section>
 

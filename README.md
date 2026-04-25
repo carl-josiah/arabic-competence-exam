@@ -20,3 +20,7 @@ The exam.php, results.php, and index.php are the main .php pages that the user v
 - PSR-1 and PSR-12 (PHP Standards)
 - Using JSON for data exchange
 - Stateless API
+
+### style
+
+_typed properties_ are used since the PHP version is above 7.4+

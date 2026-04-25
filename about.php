@@ -1,3 +1,7 @@
+<?php
+require_once 'src/SessionManager.php';
+SessionManager::start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,4 +67,3 @@
 </body>
 
 </html>
-
