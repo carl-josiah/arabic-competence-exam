@@ -38,7 +38,7 @@ $username = $_SESSION['user_name'] ?? 'Student';
         <div class="cards">
             <div class="card">
                 <h3>Duration</h3>
-                <p>30 Minutes</p>
+                <p>60 Minutes</p>
             </div>
             <div class="card">
                 <h3>Levels</h3>
@@ -46,7 +46,7 @@ $username = $_SESSION['user_name'] ?? 'Student';
             </div>
             <div class="card">
                 <h3>Questions</h3>
-                <p>20</p>
+                <p>46</p>
             </div>
             <div class="card">
                 <h3>Type</h3>

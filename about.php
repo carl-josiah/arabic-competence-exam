@@ -1,6 +1,11 @@
 <?php
 require_once 'src/SessionManager.php';
 SessionManager::start();
+
+$homeUrl = isset($_SESSION['user_id']) ? 'logged_in.php' : 'index.php';
+$loginUrl = isset($_SESSION['user_id']) ? 'logout.php' : 'login.php';
+$loginText = isset($_SESSION['user_id']) ? 'Logout' : 'Login';
+$welcomeText = isset($_SESSION['user_name']) ? 'Welcome, ' . htmlspecialchars($_SESSION['user_name']) . '!' : '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +22,12 @@ SessionManager::start();
     <nav>
         <h2>Arabic Exam</h2>
         <div>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
-            <a href="about.html">About</a>
+            <a href="<?php echo $homeUrl; ?>">Home</a>
+            <a href="<?php echo $loginUrl; ?>"><?php echo $loginText; ?></a>
+            <?php if (!isset($_SESSION['user_id'])): ?>
+            <a href="register.php">Register</a>
+            <?php endif; ?>
+            <a href="about.php">About</a>
         </div>
     </nav>
 

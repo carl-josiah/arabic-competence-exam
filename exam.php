@@ -29,14 +29,25 @@ if (!isset($_SESSION['user_id'])) {
 
     <section class="container">
         <div id="exam-app" class="form-box" style="max-width: 800px;">
+            <p id="timer"></p>
             <p id="progress"></p>
             <h2 id="question-text">Loading Questions...</h2>
-            <div id="choices-container">
+            <div id="choices-container"></div>
+
+            <div class="controls">
+                <div class="controls-left">
+                    <button id="prev" onclick="prev()" class="btn">Previous</button>
+                </div>
+
+                <div class="controls-center">
+                    <button id="reset" onclick="reset()" class="btn">Reset</button>
+                    <button id="finish" onclick="finishExam()" class="btn">Finish Exam</button>
+                </div>
+
+                <div class="controls-right">
+                    <button id="next" onclick="next()" class="btn">Next</button>
+                </div>
             </div>
-            <button id="prev" onclick="prev()" class="btn">Previous</button>
-            <button id="reset" onclick="reset()" class="btn"
-                style="background-color: #721c24; border-color: #721c24; color: white;">Reset</button>
-            <button id="next" onclick="next()" class="btn">Next</button>
         </div>
     </section>
 

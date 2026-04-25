@@ -2,7 +2,6 @@
 require_once 'src/Database.php';
 
 $error = '';
-
 $student_id = '';
 $student_name = '';
 

@@ -27,7 +27,9 @@ $username = $_SESSION['user_name'] ?? ($_SESSION['username'] ?? ($_SESSION['name
         <div>
             <a href="logged_in.php">Home</a>
             <a href="results.php">Results</a>
+            <a href="report.php">Reports</a>
             <a href="logout.php">Logout</a>
+            <a href="about.php">About</a>
         </div>
     </nav>
 
@@ -37,7 +39,7 @@ $username = $_SESSION['user_name'] ?? ($_SESSION['username'] ?? ($_SESSION['name
         <a href="<?php echo $startUrl; ?>" class="btn">Start Exam</a>
     </section>
 
-    <section class="container">
+    <sectionlogin class="container">
         <h2>Account Status</h2>
         <div class="cards">
             <div class="card">
@@ -53,11 +55,11 @@ $username = $_SESSION['user_name'] ?? ($_SESSION['username'] ?? ($_SESSION['name
                 <p>Begin your placement test</p>
             </div>
             <div class="card">
-                <h3>Support</h3>
-                <p>Check your profile for updates</p>
+                <h3>Results</h3>
+                <p>Check your results to view your scores</p>
             </div>
         </div>
-    </section>
+    </sectionlogin>
 
     <section class="container">
         <h2>Quick Actions</h2>
@@ -80,10 +82,9 @@ $username = $_SESSION['user_name'] ?? ($_SESSION['username'] ?? ($_SESSION['name
     <section class="container">
         <h2>What to Expect</h2>
         <div class="cards">
-            <div class="card">30-minute assessment</div>
-            <div class="card">20 multiple-choice questions</div>
+            <div class="card">60-minute assessment</div>
+            <div class="card">46 multiple-choice questions</div>
             <div class="card">Beginner, Intermediate, and Advanced levels</div>
-            <div class="card">Grammar, reading, listening, writing, and speaking</div>
         </div>
     </section>
 
